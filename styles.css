@@ -141,18 +141,3 @@ p {
     border: 1px solid #f5c6cb;
     display: block;
 }
-
-/* Force landscape mode on mobile devices */
-@media (max-height: 500px) and (orientation: portrait) {
-    body {
-        transform: rotate(90deg);
-        transform-origin: center center;
-        width: 100vh;
-        height: 100vw;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -50vw;
-        margin-left: -50vh;
-    }
-}

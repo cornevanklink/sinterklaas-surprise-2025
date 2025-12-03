@@ -1,3 +1,21 @@
+// Force landscape orientation on page load
+window.addEventListener('load', () => {
+    if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('landscape').catch(err => {
+            console.log('Could not lock orientation:', err);
+        });
+    }
+});
+
+// Also try to lock on orientation change
+window.addEventListener('orientationchange', () => {
+    if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('landscape').catch(err => {
+            console.log('Could not lock orientation:', err);
+        });
+    }
+});
+
 function checkAnswers() {
     const inputs = document.querySelectorAll('.poem-input');
     const resultDiv = document.getElementById('result');
