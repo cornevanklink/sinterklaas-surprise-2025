@@ -5,30 +5,47 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ffd700 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+body::before {
+    content: "❄ ❄ ❄ ❄ ❄";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
-    background: white;
+    background: linear-gradient(to bottom, #fffacd 0%, #fff8dc 100%);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 215, 0, 0.3);
     max-width: 600px;
     width: 90%;
     text-align: center;
+    border: 3px solid #8b0000;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    color: #764ba2;
+    color: #8b0000;
     margin-bottom: 1rem;
     font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 p {
@@ -39,7 +56,7 @@ p {
 
 .btn {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
     color: white;
     padding: 0.75rem 2rem;
     border: none;
@@ -48,6 +65,8 @@ p {
     font-size: 1rem;
     text-decoration: none;
     transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
@@ -56,13 +75,15 @@ p {
 }
 
 .poem {
-    background: #f9f9f9;
+    background: linear-gradient(to right, #fff8dc 0%, #fffacd 100%);
     padding: 2rem;
     border-radius: 8px;
     margin: 2rem 0;
     text-align: left;
     font-size: 1.1rem;
     line-height: 2;
+    border-left: 5px solid #dc143c;
+    border-right: 5px solid #ffd700;
 }
 
 .poem p {
@@ -72,18 +93,21 @@ p {
 
 .poem-input {
     padding: 0.5rem;
-    border: 2px solid #667eea;
+    border: 2px solid #dc143c;
     border-radius: 4px;
     font-size: 1rem;
-    min-width: 100px;
+    min-width: 60px;
+    max-width: 80px;
     text-align: center;
-    background: white;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.2);
 }
 
 .poem-input:focus {
     outline: none;
-    background: #f0f0ff;
-    border-color: #764ba2;
+    background: #fffacd;
+    border-color: #8b0000;
+    box-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
 }
 
 .poem-input.correct {

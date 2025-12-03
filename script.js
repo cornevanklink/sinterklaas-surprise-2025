@@ -23,6 +23,11 @@ function checkAnswers() {
         resultDiv.textContent = '🎉 Gefeliciteerd! Je hebt alle woorden goed geraden!';
         resultDiv.classList.remove('error');
         resultDiv.classList.add('success');
+        
+        // Redirect to success page after 2 seconds
+        setTimeout(() => {
+            window.location.href = 'success.html';
+        }, 5000);
     } else {
         resultDiv.textContent = `Je hebt ${correctCount} van ${inputs.length} woorden goed. Probeer het nog een keer!`;
         resultDiv.classList.remove('success');
